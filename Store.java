@@ -12,7 +12,7 @@ public synchronized void get()
             throw new RuntimeException(e);
         }}
         amount-=1;
-        print();
+        printStatus();
         notify();
 }
 
@@ -27,11 +27,11 @@ public synchronized void put()
             throw new RuntimeException(e);
         }}
         amount+=1;
-        print();
+        printStatus();
         notify();
 }
 
-private void print()
+private void printStatus()
 {
     System.out.println("Число товаров на складе: "+amount);
 }}
